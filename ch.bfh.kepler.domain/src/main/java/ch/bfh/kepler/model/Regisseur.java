@@ -7,9 +7,7 @@ import java.util.List;
 
 import javax.persistence.*;
 
-import static javax.persistence.FetchType.EAGER;
 import static javax.persistence.FetchType.LAZY;
-import static javax.persistence.TemporalType.TIME;
 import static javax.persistence.TemporalType.DATE;
 import static javax.persistence.CascadeType.ALL;
 

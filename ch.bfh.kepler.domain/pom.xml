@@ -8,7 +8,11 @@
   <groupId>ch.bfh.kepler.domain</groupId>
   <artifactId>ch.bfh.kepler.domain</artifactId>
   <name>ch.bfh.kepler Domain</name>
+<<<<<<< HEAD
  
+=======
+
+>>>>>>> 9387d012078be859e72860d5d61de820a59894e0
   	<dependencies>
 		<dependency>
 			<groupId>org.eclipse.persistence</groupId>
@@ -43,5 +47,8 @@
 			<url>http://www.eclipse.org/downloads/download.php?r=1&amp;nf=1&amp;file=/rt/eclipselink/maven.repo</url>
 		</repository>
 	</repositories>  
+<<<<<<< HEAD
   
+=======
+>>>>>>> 9387d012078be859e72860d5d61de820a59894e0
 </project>

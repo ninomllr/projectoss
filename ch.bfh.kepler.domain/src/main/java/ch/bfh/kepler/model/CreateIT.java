@@ -21,8 +21,8 @@ public class CreateIT {
 		genre.setGenre("Thriller");
 		
 		Regisseur regisseur = new Regisseur();
-		regisseur.setFirstname("Paul");
-		regisseur.setLastname("Panzer");
+		regisseur.setFirstname("Steven");
+		regisseur.setLastname("Spielberg");
 		regisseur.setDateOfBirth(new Date(1979, 12,1));
 		regisseur.setNationality("Swiss");
 		regisseur.setPortaitPath("");

@@ -8,11 +8,10 @@ import java.util.List;
 import javax.persistence.*;
 
 import static javax.persistence.TemporalType.DATE;
-import static javax.persistence.TemporalType.TIME;
+
 
 import org.eclipse.persistence.annotations.JoinFetch;
 
-import static org.eclipse.persistence.annotations.JoinFetchType.INNER;
 import static org.eclipse.persistence.annotations.JoinFetchType.OUTER;
 import static javax.persistence.CascadeType.ALL;
 
