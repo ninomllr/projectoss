@@ -8,7 +8,6 @@
   <groupId>ch.bfh.kepler.domain</groupId>
   <artifactId>ch.bfh.kepler.domain</artifactId>
   <name>ch.bfh.kepler Domain</name>
-
   	<dependencies>
 		<dependency>
 			<groupId>org.eclipse.persistence</groupId>
