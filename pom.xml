@@ -7,6 +7,7 @@
   <name>ch.bfh.kepler</name>
   <modules>
   	<module>ch.bfh.kepler.domain</module>
+  	<module>ch.bfh.kepler.service</module>
   </modules>
   <build>
 	  <plugins>
