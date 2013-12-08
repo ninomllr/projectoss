@@ -8,6 +8,6 @@
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
 
 	<import resource="classpath*:persistenceContext.xml"/>	
-	<context:component-scan base-package="ch.bfh.swos.bookapp.service.impl" />
+	<context:component-scan base-package="ch.bfh.kepler.service.impl" />
 
 </beans>
