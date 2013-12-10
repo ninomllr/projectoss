@@ -5,6 +5,8 @@ import java.lang.String;
 import java.util.Date;
 import java.util.List;
 
+import ch.bfh.kepler.model.Movie;
+
 /**
  * Entity implementation class for Entity: Actor
  *
@@ -25,18 +27,15 @@ public class ActorDTO implements Serializable {
 	public List<MovieDTO> getMovies() {
 		return movies;
 	}
-	public void setMovies(List<MovieDTO> movies) {
-		this.movies = movies;
-	}
 
 	public ActorDTO() {
 		super();
 	}   
-	public long getId() {
+	public Long getId() {
 		return this.id;
 	}
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}   
 	public String getFirstname() {
