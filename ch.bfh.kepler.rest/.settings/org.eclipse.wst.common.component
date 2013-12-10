@@ -5,6 +5,12 @@
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/test/java"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/test/resources"/>
+        <dependent-module archiveName="ch.bfh.kepler.domain.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/ch.bfh.kepler.domain/ch.bfh.kepler.domain">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="ch.bfh.kepler.service.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/ch.bfh.kepler.service/ch.bfh.kepler.service">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
         <property name="context-root" value="ch.bfh.kepler.rest"/>
         <property name="java-output-path" value="/ch.bfh.kepler.rest/target/classes"/>
     </wb-module>

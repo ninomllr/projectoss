@@ -3,6 +3,8 @@
 	<name>ch.bfh.kepler.rest</name>
 	<comment></comment>
 	<projects>
+		<project>ch.bfh.kepler.domain</project>
+		<project>ch.bfh.kepler.service</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
