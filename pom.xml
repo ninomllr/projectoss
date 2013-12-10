@@ -8,6 +8,7 @@
   <modules>
   	<module>ch.bfh.kepler.domain</module>
   	<module>ch.bfh.kepler.service</module>
+	<module>ch.bfh.kepler.rest</module>
   </modules>
   <build>
 	  <plugins>
