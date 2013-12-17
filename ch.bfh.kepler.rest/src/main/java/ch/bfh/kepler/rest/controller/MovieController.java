@@ -61,9 +61,9 @@ public class MovieController {
 	/**
 	 * Update
 	 */
-	@RequestMapping(method = RequestMethod.PUT)
+	@RequestMapping(value = "{id}", method = RequestMethod.PUT)
 	@ResponseBody
-	public MovieDTO updateMovie(@RequestBody MovieDTO movie) {
+	public MovieDTO updateMovie(@RequestBody MovieDTO movie, @PathVariable long id) {
 		MovieDTO updatedMovie = movieService.update(movie);
 		System.out.println("Movie updated with id = " + updatedMovie.getId());
 		return updatedMovie;
