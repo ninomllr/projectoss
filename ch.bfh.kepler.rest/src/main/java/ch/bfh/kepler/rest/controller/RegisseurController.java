@@ -59,8 +59,8 @@ public class RegisseurController {
 	 */
 	@RequestMapping(method = RequestMethod.PUT)
 	@ResponseBody
-	public RegisseurDTO updateRegisseur(@RequestBody RegisseurDTO movie) {
-		RegisseurDTO updateRegisseur = regisseurService.update(movie);
+	public RegisseurDTO updateRegisseur(@RequestBody RegisseurDTO regisseur) {
+		RegisseurDTO updateRegisseur = regisseurService.update(regisseur);
 		System.out.println("Regisseur updated with id = " + updateRegisseur.getId());
 		return updateRegisseur;
 	}

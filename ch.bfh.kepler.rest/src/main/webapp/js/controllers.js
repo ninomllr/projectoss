@@ -31,3 +31,34 @@ controllers.controller('ActorController', ['$scope', 'Actor', function($scope, A
 		Actor.remove({actorId:id});
     };
 }]);
+
+
+controllers.controller('RegisseurController', ['$scope', 'Regisseur', function($scope, Regisseur) {
+    $scope.currentRegisseur = new Regisseur();
+    $scope.regisseurs = Regisseur.query();
+    $scope.showId = false;
+
+    $scope.cancel = function () {
+        $scope.currentRegisseur = new Regisseur();
+    };
+
+    $scope.save = function () {
+        var isNew = $scope.currentRegisseur.id == null;
+        if (isNew) {
+            $scope.currentRegisseur = Regisseur.save($scope.currentRegisseur);
+            $scope.regisseurs.push($scope.currentRegisseur);
+        } else {
+            $scope.currentRegisseur = Regisseur.update($scope.currentRegisseur);
+        }
+        $scope.cancel();
+    };
+
+    $scope.edit = function (regisseur) {
+    	$scope.currentRegisseur = regisseur;
+    };
+
+    $scope.remove = function (index, id) {
+		$scope.regisseurs.splice(index, 1);
+		Regisseur.remove({regisseurId:id});
+    };
+}]);
