@@ -57,9 +57,9 @@ public class GenreController {
 	/**
 	 * Update
 	 */
-	@RequestMapping(method = RequestMethod.PUT)
+	@RequestMapping(value = "{id}", method = RequestMethod.PUT)
 	@ResponseBody
-	public GenreDTO updateGenre(@RequestBody GenreDTO genre) {
+	public GenreDTO updateGenre(@RequestBody GenreDTO genre, @PathVariable long id) {
 		GenreDTO updateGenre = genreService.update(genre);
 		System.out.println("Genre updated with id = " + updateGenre.getId());
 		return updateGenre;

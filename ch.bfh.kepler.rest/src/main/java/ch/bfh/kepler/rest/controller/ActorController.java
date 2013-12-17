@@ -59,7 +59,7 @@ public class ActorController {
 	/**
 	 * Update
 	 */
-	@RequestMapping(method = RequestMethod.PUT)
+	@RequestMapping(value = "{id}", method = RequestMethod.PUT)
 	@ResponseBody
 	public ActorDTO updateActor(@RequestBody ActorDTO actor) {
 		ActorDTO updatedActor = actorService.update(actor);

@@ -57,7 +57,7 @@ public class RegisseurController {
 	/**
 	 * Update
 	 */
-	@RequestMapping(method = RequestMethod.PUT)
+	@RequestMapping(value = "{id}", method = RequestMethod.PUT)
 	@ResponseBody
 	public RegisseurDTO updateRegisseur(@RequestBody RegisseurDTO regisseur) {
 		RegisseurDTO updateRegisseur = regisseurService.update(regisseur);
