@@ -3,7 +3,7 @@
 <html>
 
 <head>
-    <title>BFH BookApp REST</title>
+    <title>BFH MovieApp REST</title>
 
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script type="text/javascript"
@@ -15,56 +15,104 @@
     <script type="text/javascript" src="js/controllers.js"></script>
     <script type="text/javascript" src="js/services.js"></script>
 
-    <link rel="stylesheet" type="text/css"
-          href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/base/jquery-ui.css">
+
+	<script type="text/javascript" src="js/ui-bootstrap-tpls.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/base/jquery-ui.css" />
+    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap.min.css" rel="stylesheet"/>
 </head>
 
-<body>
+<body ng-app="movieapp">
 
-<h2>Current Actor</h2>
+<div role="main">
 
-<div>
+	<header class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+    <div class="container">
+      <div class="dropdown pull-left">
+        <a class="brand dropdown-toggle" role="button" data-toggle="dropdown" href="#"> 
+          OSS Movie App
+          <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+          <li><a href="#">Eclipse is a pain!! <span class="label label-success">Fact</span></a></li>
+        </ul>
+      </div>
+      <div class="nav-collapse">
+        <ul class="nav">
+           <li>
+               <a href="#" role="button" class="dropdown-toggle">
+                   Data<b class="caret"></b>
+               </a>
+               <ul class="dropdown-menu">
+                   
+                   <li><a href="movies.html">Movies</a></li>
+                   <li><a href="actors.html">Actors</a></li>
+                   <li><a href="regisseurs.html">Regisseurs</a></li>
+                   <li><a href="genres.html">Genres</a></li>
+                   
+               </ul>
+           </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
 
-    <form id="form">
-        <label for="firstname">Firstname</label>
-        <input id="lastname"/>
-        <br/>
-        <label for="lastname">Lastname</label>
-        <input id="lastname"/>
-        <br/>
-        <label for="id">Id</label>
-        <input id="id" disabled="disabled"/>
-        <br/>
-        <button id="save">Save Actor</button>
-        <button id="cancel">Cancel</button>
-    </form>
+	<div class="container">
+	
+		<h2>Current Actor</h2>
+		
+		<div ng-controller="ActorController">
+		
+		    <form id="form" role="form">
+		    	<div class="form-group">
+         
+			        <label for="firstname">Firstname</label>
+			        <input class="form-control" id="lastname" ng-model="currentActor.firstname" />
+			        <br/>
+			        <label for="lastname">Lastname</label>
+			        <input id="lastname" ng-model="currentActor.lastname" />
+			        <br/>
+			        <label for="id">Id</label>
+			        <input id="id" disabled="disabled" ng-model="currentActor.id" />
+			        <br/><br />
+			        <button class="btn" id="save" ng-click="save()">Save Actor</button>
+			        <button class="btn" id="cancel" ng-click="cancel()">Cancel</button>
+		        </div>
+		        
+		    </form>
+		
+		    <h2>Actors</h2>
+		
+		    <form id="list">
 
-    <h2>Actors</h2>
-
-    <form id="list">
-        <input id="showId" type="checkbox"/>
-        <label for="showId">Show Id</label>
-        <table id="table" border="1">
-            <thead>
-            <tr>
-                <th>Firstname</th>
-                <th>Lastname</th>
-                <th>Id</th>
-                <th>Edit</th>
-                <th>Delete</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td>{{actor.firstname}}</td>
-                <td>{{actor.lastname}}</td>
-                <td >{{actor.id}}</td>
-                <td><button id="edit">Edit</button></td>
-                <td><button id="delete">Delete</button></td>
-            </tr>
-            </tbody>
-        </table>
-    </form>
+		        <table id="table" class="table">
+		            <thead>
+		            <tr>
+		                <th>Firstname</th>
+		                <th>Lastname</th>
+		                <th>Id</th>
+		                <th>Commands</th>
+		            </tr>
+		            </thead>
+		            <tbody>
+		            <tr ng-repeat="actor in actors">
+		                <td>{{actor.firstname}}</td>
+		                <td>{{actor.lastname}}</td>
+		                <td >{{actor.id}}</td>
+		                <td>
+		                	<button class="btn" id="edit" ng-click="edit(actor)">Edit</button>
+		                	<button class="btn" id="delete" ng-click="remove($index, actor.id)">Delete</button>
+		                </td>
+		            </tr>
+		            </tbody>
+		        </table>
+		    </form>
+		
+		</div>
+	
+	</div>
 
 </div>
 </body>
