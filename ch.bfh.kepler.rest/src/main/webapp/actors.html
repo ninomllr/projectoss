@@ -17,16 +17,18 @@
 
 
 	<script type="text/javascript" src="js/ui-bootstrap-tpls.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap-datepicker.js"></script>
 
     <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/base/jquery-ui.css" />
     <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="css/datepicker.css" rel="stylesheet"/>
+    <link href="css/style.css" rel="stylesheet"/>
 </head>
 
 <body ng-app="movieapp">
 
-<div role="main">
 
-	<header class="navbar navbar-fixed-top">
+	<div class="navbar navbar-inverse navbar-fixed-top">
     <div class="navbar-inner">
     <div class="container">
       <div class="dropdown pull-left">
@@ -57,30 +59,38 @@
       </div>
     </div>
   </div>
-</header>
-
+</div>
+<br /><br />
 	<div class="container">
-	
+
 		<h2>Current Actor</h2>
 		
 		<div ng-controller="ActorController">
 		
-		    <form id="form" role="form">
-		    	<div class="form-group">
-         
+		    <form>
+		    	<fieldset>         
 			        <label for="firstname">Firstname</label>
-			        <input class="form-control" id="lastname" ng-model="currentActor.firstname" />
+			        <input type="text" id="lastname" ng-model="currentActor.firstname" />
 			        <br/>
 			        <label for="lastname">Lastname</label>
-			        <input id="lastname" ng-model="currentActor.lastname" />
+			        <input type="text" id="lastname" ng-model="currentActor.lastname" />
+			        <br/>
+			        <label for="nationality">Nationality</label>
+			        <input type="text" id="nationality" ng-model="currentActor.nationality" />
+			        <br/>
+			        <label for="portaitPath">URL for Portrait</label>
+			        <input type="text" class="form-control" id="portaitPath" ng-model="currentActor.portaitPath" />
+			        <br/>
+			        
+			        <label for="dateOfBirth">Date of Birth</label>
+			        <input type="text" id="dateOfBirth" ng-model="currentActor.dateOfBirth" />
 			        <br/>
 			        <label for="id">Id</label>
-			        <input id="id" disabled="disabled" ng-model="currentActor.id" />
+			        <input type="text" id="id" ng-model="currentActor.id" disabled="true" />
 			        <br/><br />
 			        <button class="btn" id="save" ng-click="save()">Save Actor</button>
 			        <button class="btn" id="cancel" ng-click="cancel()">Cancel</button>
-		        </div>
-		        
+		        </fieldset>		        
 		    </form>
 		
 		    <h2>Actors</h2>
@@ -90,17 +100,25 @@
 		        <table id="table" class="table">
 		            <thead>
 		            <tr>
+		            	<th>Id</th>
+		            	<th>Portrait</th>
 		                <th>Firstname</th>
 		                <th>Lastname</th>
-		                <th>Id</th>
+		                <th>Nationality</th>
+		                <th>Date of Birth</th>
 		                <th>Commands</th>
 		            </tr>
 		            </thead>
 		            <tbody>
 		            <tr ng-repeat="actor in actors">
+		            	<td>{{actor.id}}</td>
+		            	<td>
+							<img class="overview" src="{{actor.portaitPath}}" />
+		            	</td>
 		                <td>{{actor.firstname}}</td>
 		                <td>{{actor.lastname}}</td>
-		                <td >{{actor.id}}</td>
+		                <td>{{actor.nationality}}</td>
+		                <td>{{actor.dateOfBirth}}</td>
 		                <td>
 		                	<button class="btn" id="edit" ng-click="edit(actor)">Edit</button>
 		                	<button class="btn" id="delete" ng-click="remove($index, actor.id)">Delete</button>
@@ -113,7 +131,14 @@
 		</div>
 	
 	</div>
-
-</div>
+	
+	<script >
+	$( document ).ready(function() {
+		$('#dateOfBirth').datepicker({
+			format: 'mm-dd-yyyy'
+		});
+	});
+	
+	</script>
 </body>
 </html>
