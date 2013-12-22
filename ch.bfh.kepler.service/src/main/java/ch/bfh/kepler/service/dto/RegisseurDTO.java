@@ -5,6 +5,8 @@ import java.lang.String;
 import java.util.Date;
 import java.util.List;
 
+import ch.bfh.kepler.model.Regisseur;
+
 
 /**
  * Entity implementation class for Entity: Regisseur
@@ -22,7 +24,7 @@ public class RegisseurDTO implements Serializable {
 	private String PortaitPath;
 	private static final long serialVersionUID = 1L;
 
-	private List<MovieDTO> movies;
+	private List<RegisseurDTO> regisseur;
 
 	public RegisseurDTO() {
 		super();
@@ -69,11 +71,11 @@ public class RegisseurDTO implements Serializable {
 	public void setPortaitPath(String PortaitPath) {
 		this.PortaitPath = PortaitPath;
 	}
-	public List<MovieDTO> getMovies() {
-		return movies;
+	public List<RegisseurDTO> getRegisseur() {
+		return regisseur;
 	}
-	public void setMovies(List<MovieDTO> movies) {
-		this.movies = movies;
+	public void setMovies(List<RegisseurDTO> regisseur) {
+		this.regisseur = regisseur;
 	}
    
 }

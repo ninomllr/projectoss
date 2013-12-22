@@ -9,7 +9,7 @@ services.factory('Actor', ['$resource', function ($resource) {
 }]);
 
 services.factory('Regisseur', ['$resource', function ($resource) {
-    return $resource('rest/regisseurs/:regisseurId', {regisseurId:'@id'}, {
+    return $resource('rest/regisseurs/:id', {id:'@id'}, {
         'update': {method: 'PUT'}
     });
 }]);

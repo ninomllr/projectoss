@@ -68,9 +68,19 @@
          
 			        <label for="firstname">Firstname</label>
 			        <input class="form-control" id="lastname" ng-model="currentRegisseur.firstname" />
+			        <img alt="portrait" >
 			        <br/>
 			        <label for="lastname">Lastname</label>
 			        <input id="lastname" ng-model="currentRegisseur.lastname" />
+			        <br/>
+			        <label for="dateOfBirth">Date of Birth</label>
+			        <input id="dateOfBirth" ng-model="currentRegisseur.dateOfBirth" />
+			        <br/>
+			        <label for="nationality">Nationality</label>
+			        <input id="nationality" ng-model="currentRegisseur.nationality" />
+			        <br/>
+			        <label for="portraitPath">Picturepath</label>
+			        <input id="portraitPath" ng-model="currentRegisseur.portraitPath" />
 			        <br/>
 			        <label for="id">Id</label>
 			        <input id="id" disabled="disabled" ng-model="currentRegisseur.id" />
@@ -88,17 +98,21 @@
 		        <table id="table" class="table">
 		            <thead>
 		            <tr>
+		            	<th>Id</th>
 		                <th>Firstname</th>
 		                <th>Lastname</th>
-		                <th>Id</th>
+		                <th>Date of Birth</th>
+		                <th>Nationality</th>
 		                <th>Commands</th>
 		            </tr>
 		            </thead>
 		            <tbody>
 		            <tr ng-repeat="regisseur in regisseurs">
+		                <td>{{regisseur.id}}</td>
 		                <td>{{regisseur.firstname}}</td>
 		                <td>{{regisseur.lastname}}</td>
-		                <td >{{regisseur.id}}</td>
+		                <td>{{regisseur.dateOfBirth}}</td>
+		                <td>{{regisseur.nationality}}</td>
 		                <td>
 		                	<button class="btn" id="edit" ng-click="edit(regisseur)">Edit</button>
 		                	<button class="btn" id="delete" ng-click="remove($index, regisseur.id)">Delete</button>

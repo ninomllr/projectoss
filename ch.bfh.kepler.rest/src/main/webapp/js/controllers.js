@@ -48,7 +48,7 @@ controllers.controller('RegisseurController', ['$scope', 'Regisseur', function($
             $scope.currentRegisseur = Regisseur.save($scope.currentRegisseur);
             $scope.regisseurs.push($scope.currentRegisseur);
         } else {
-            $scope.currentRegisseur = Regisseur.update($scope.currentRegisseur);
+            $scope.currentRegisseur = Regisseur.updateRegisseur($scope.currentRegisseur);
         }
         $scope.cancel();
     };
