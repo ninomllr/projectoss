@@ -13,3 +13,9 @@ services.factory('Regisseur', ['$resource', function ($resource) {
         'update': {method: 'PUT'}
     });
 }]);
+
+services.factory('Genre', ['$resource', function ($resource) {
+    return $resource('rest/genres/:id', {id:'@id'}, {
+        'update': {method: 'PUT'}
+    });
+}]);

@@ -1,5 +1,7 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+
 <head>
     <title>BFH MovieApp REST</title>
 
@@ -15,16 +17,17 @@
 
 
 	<script type="text/javascript" src="js/ui-bootstrap-tpls.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap-datepicker.js"></script>
 
     <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/base/jquery-ui.css" />
     <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="css/datepicker.css" rel="stylesheet"/>
+    <link href="css/style.css" rel="stylesheet"/>
 </head>
 
 <body ng-app="movieapp">
 
-<div role="main">
-
-	<header class="navbar navbar-fixed-top">
+	<div class="navbar navbar-inverse navbar-fixed-top">
     <div class="navbar-inner">
     <div class="container">
       <div class="dropdown pull-left">
@@ -103,16 +106,20 @@
 		                <th>Lastname</th>
 		                <th>Date of Birth</th>
 		                <th>Nationality</th>
+		                <th>Picture</th>
 		                <th>Commands</th>
 		            </tr>
 		            </thead>
 		            <tbody>
-		            <tr ng-repeat="regisseur in regisseurs">
-		                <td>{{regisseur.id}}</td>
+		            <tr ng-repeat="regisseur in regisseurs">	
+		            	<td>{{regisseur.id}}</td>                
 		                <td>{{regisseur.firstname}}</td>
 		                <td>{{regisseur.lastname}}</td>
 		                <td>{{regisseur.dateOfBirth}}</td>
 		                <td>{{regisseur.nationality}}</td>
+		                <td>
+							<img class="overview" src="{{regisseur.portaitPath}}" />
+		            	</td>
 		                <td>
 		                	<button class="btn" id="edit" ng-click="edit(regisseur)">Edit</button>
 		                	<button class="btn" id="delete" ng-click="remove($index, regisseur.id)">Delete</button>
@@ -125,7 +132,14 @@
 		</div>
 	
 	</div>
-
-</div>
+	
+	<script >
+	$( document ).ready(function() {
+		$('#dateOfBirth').datepicker({
+			format: 'mm-dd-yyyy'
+		});
+	});
+	
+	</script>
 </body>
 </html>
