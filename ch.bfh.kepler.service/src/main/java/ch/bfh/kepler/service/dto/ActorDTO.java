@@ -22,10 +22,10 @@ public class ActorDTO implements Serializable {
 	private String PortaitPath;
 	private static final long serialVersionUID = 1L;
 	
-	private List<MovieDTO> movies;
+	private List<ActorDTO> actors;
 	
-	public List<MovieDTO> getMovies() {
-		return movies;
+	public List<ActorDTO> getActors() {
+		return actors;
 	}
 
 	public ActorDTO() {

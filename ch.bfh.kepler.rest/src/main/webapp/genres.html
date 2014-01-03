@@ -1,0 +1,113 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+    <title>BFH MovieApp REST</title>
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript"
+            src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="http://code.angularjs.org/1.0.1/angular-1.0.1.min.js"></script>
+    <script type="text/javascript" src="http://code.angularjs.org/1.0.1/angular-resource-1.0.1.min.js"></script>
+    
+    <script type="text/javascript" src="js/application.js"></script>
+    <script type="text/javascript" src="js/controllers.js"></script>
+    <script type="text/javascript" src="js/services.js"></script>
+
+
+	<script type="text/javascript" src="js/ui-bootstrap-tpls.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap-datepicker.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/base/jquery-ui.css" />
+    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="css/datepicker.css" rel="stylesheet"/>
+    <link href="css/style.css" rel="stylesheet"/>
+</head>
+
+<body ng-app="movieapp">
+
+	<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+    <div class="container">
+      <div class="dropdown pull-left">
+        <a class="brand dropdown-toggle" role="button" data-toggle="dropdown" href="#"> 
+          OSS Movie App
+          <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+          <li><a href="#">Eclipse is a pain!! <span class="label label-success">Fact</span></a></li>
+        </ul>
+      </div>
+      <div class="nav-collapse">
+        <ul class="nav">
+           <li>
+               <a href="#" role="button" class="dropdown-toggle">
+                   Data<b class="caret"></b>
+               </a>
+               <ul class="dropdown-menu">
+                   
+                   <li><a href="movies.html">Movies</a></li>
+                   <li><a href="actors.html">Actors</a></li>
+                   <li><a href="regisseurs.html">Regisseurs</a></li>
+                   <li><a href="genres.html">Genres</a></li>
+                   
+               </ul>
+           </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
+
+	<div class="container">
+	
+		<h2>Current Genres</h2>
+		
+		<div ng-controller="GenreController">
+		
+		    <form id="form" role="form">
+		    	<div class="form-group">
+         
+			        <label for="genre">Genre</label>
+			        <input class="form-control" id="genre" ng-model="currentGenre.genre" />
+			        <br/>
+			        <label for="id">Id</label>
+			        <input id="id" disabled="disabled" ng-model="currentGenre.id" />
+			        <br/><br />
+			        <button class="btn" id="save" ng-click="save()">Save Genre</button>
+			        <button class="btn" id="cancel" ng-click="cancel()">Cancel</button>
+		        </div>
+		        
+		    </form>
+		
+		    <h2>Genres</h2>
+		
+		    <form id="list">
+
+		        <table id="table" class="table">
+		            <thead>
+		            <tr>
+		            	<th>Id</th>
+		                <th>Genre</th>
+		                <th>Commands</th>
+		            </tr>
+		            </thead>
+		            <tbody>
+		            <tr ng-repeat="genre in genres">	
+		            	<td>{{genre.id}}</td>                
+		                <td>{{genre.genre}}</td>
+		                <td>
+		                	<button class="btn" id="edit" ng-click="edit(genre)">Edit</button>
+		                	<button class="btn" id="delete" ng-click="remove($index, genre.id)">Delete</button>
+		                </td>
+		            </tr>
+		            </tbody>
+		        </table>
+		    </form>
+		
+		</div>
+	
+	</div>
+</body>
+</html>

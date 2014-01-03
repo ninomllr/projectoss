@@ -39,8 +39,8 @@ public class GenreController {
 	 */
 	@RequestMapping(method = RequestMethod.GET)
 	@ResponseBody
-	public Collection<GenreDTO> getGenre() {
-		System.out.println("Collection of Genre requested");
+	public Collection<GenreDTO> getGenres() {
+		System.out.println("Collection of Genres requested");
 		return genreService.list();
 	}
 

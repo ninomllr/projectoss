@@ -8,8 +8,21 @@ services.factory('Actor', ['$resource', function ($resource) {
     });
 }]);
 
+
 services.factory('Movie', ['$resource', function ($resource) {
     return $resource('rest/movies/:movieId', {movieId:'@id'}, {
+        'update': {method: 'PUT'}
+    });
+}]);
+
+services.factory('Regisseur', ['$resource', function ($resource) {
+    return $resource('rest/regisseurs/:id', {id:'@id'}, {
+        'update': {method: 'PUT'}
+    });
+}]);
+
+services.factory('Genre', ['$resource', function ($resource) {
+    return $resource('rest/genres/:id', {id:'@id'}, {
         'update': {method: 'PUT'}
     });
 }]);

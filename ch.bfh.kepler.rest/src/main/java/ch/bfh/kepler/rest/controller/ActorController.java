@@ -30,7 +30,7 @@ public class ActorController {
 	 */
 	@RequestMapping(method = RequestMethod.POST)
 	@ResponseBody
-	public ActorDTO createMovie(@RequestBody ActorDTO actor) {
+	public ActorDTO createActor(@RequestBody ActorDTO actor) {
 		ActorDTO createActor = actorService.create(actor);
 		System.out.println("Actor created with id = " + createActor.getId());
 		return createActor;
@@ -42,7 +42,7 @@ public class ActorController {
 	@RequestMapping(method = RequestMethod.GET)
 	@ResponseBody
 	public Collection<ActorDTO> getActor() {
-		System.out.println("Collection of Movie requested");
+		System.out.println("Collection of Actor requested");
 		return actorService.list();
 	}
 
@@ -51,7 +51,7 @@ public class ActorController {
 	 */
 	@RequestMapping(value = "{id}", method = RequestMethod.GET)
 	@ResponseBody
-	public ActorDTO getMovie(@PathVariable long id) {
+	public ActorDTO getActor(@PathVariable long id) {
 		System.out.println("Actor requested with id = " + id);
 		return actorService.read(id);
 	}
@@ -61,11 +61,12 @@ public class ActorController {
 	 */
 	@RequestMapping(value = "{id}", method = RequestMethod.PUT)
 	@ResponseBody
-	public ActorDTO updateMovie(@RequestBody ActorDTO actor, @PathVariable long id) {
+	public ActorDTO updateMovier(@RequestBody ActorDTO actor){ // , @pathVariable long id) {
 		ActorDTO updatedActor = actorService.update(actor);
 		System.out.println("Actor updated with id = " + updatedActor.getId());
 		return updatedActor;
 	}
+
 
 	/**
 	 * Delete

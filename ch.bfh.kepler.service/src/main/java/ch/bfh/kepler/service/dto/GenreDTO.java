@@ -1,20 +1,20 @@
 package ch.bfh.kepler.service.dto;
 
-
 import java.io.Serializable;
 import java.lang.Long;
 import java.lang.String;
 import java.util.List;
+
+
 /**
  * Entity implementation class for Entity: Genre
  *
  */
 
-
 public class GenreDTO implements Serializable {
 
 	   
-	private Long id;
+	private Long idGenre;
 	private String Genre;
 	private static final long serialVersionUID = 1L;
 	
@@ -24,11 +24,11 @@ public class GenreDTO implements Serializable {
 		super();
 	}   
 	public Long getId() {
-		return this.id;
+		return this.idGenre;
 	}
 
 	public void setId(Long id) {
-		this.id = id;
+		this.idGenre = id;
 	}   
 	public String getGenre() {
 		return this.Genre;
@@ -38,12 +38,12 @@ public class GenreDTO implements Serializable {
 		this.Genre = Genre;
 	}
 	
-	public List<MovieDTO> getMovies() {
-		return movies;
-	}
-	
-	public void setMovies(List<MovieDTO> movies) {
-		this.movies = movies;
-	}
+//	public List<MovieDTO> getMovies() {
+//		return movies;
+//	}
+//	
+//	public void setMovies(List<MovieDTO> movies) {
+//		this.movies = movies;
+//	}
    
 }

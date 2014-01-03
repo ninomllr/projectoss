@@ -45,12 +45,12 @@ public class Genre implements Serializable {
 		this.Genre = Genre;
 	}
 	
-	public List<Movie> getMovies() {
-		return movies;
-	}
-	
-	public void setMovies(List<Movie> movies) {
-		this.movies = movies;
-	}
+//	public List<Movie> getMovies() {
+//		return movies;
+//	}
+//	
+//	public void setMovies(List<Movie> movies) {
+//		this.movies = movies;
+//	}
    
 }

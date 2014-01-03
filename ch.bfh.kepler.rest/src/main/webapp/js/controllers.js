@@ -52,13 +52,75 @@ controllers.controller('MovieController', ['$scope', 'Movie', function($scope, M
         }
         $scope.cancel();
     };
+    
+            $scope.edit = function (movie) {
+            	$scope.currentMovie = movie;
+            };
 
-    $scope.edit = function (movie) {
-    	$scope.currentMovie = movie;
+            $scope.remove = function (index, id) {
+        		$scope.movies.splice(index, 1);
+        		Movie.remove({movieId:id});
+            };
+        }]);
+
+controllers.controller('RegisseurController', ['$scope', 'Regisseur', function($scope, Regisseur) {
+    $scope.currentRegisseur = new Regisseur();
+    $scope.regisseurs = Regisseur.query();
+    $scope.showId = false;
+
+    $scope.cancel = function () {
+        $scope.currentRegisseur = new Regisseur();
+    };
+
+    $scope.save = function () {
+        var isNew = $scope.currentRegisseur.id == null;
+        if (isNew) {
+            $scope.currentRegisseur = Regisseur.save($scope.currentRegisseur);
+            $scope.regisseurs.push($scope.currentRegisseur);
+        } else {
+            $scope.currentRegisseur = Regisseur.updateRegisseur($scope.currentRegisseur);
+
+        }
+        $scope.cancel();
+    };
+
+
+    $scope.edit = function (regisseur) {
+    	$scope.currentRegisseur = regisseur;
     };
 
     $scope.remove = function (index, id) {
-		$scope.movies.splice(index, 1);
-		Movie.remove({movieId:id});
+		$scope.regisseurs.splice(index, 1);
+		Regisseur.remove({regisseurId:id});
+    };
+}]);
+
+controllers.controller('GenreController', ['$scope', 'Genre', function($scope, Genre) {
+    $scope.currentGenre = new Genre();
+    $scope.genres = Genre.query();
+    $scope.showId = false;
+
+    $scope.cancel = function () {
+        $scope.currentGenre = new Genre();
+    };
+
+    $scope.save = function () {
+        var isNew = $scope.currentGenre.id == null;
+        if (isNew) {
+            $scope.currentGenre = Genre.save($scope.currentGenre);
+            $scope.genres.push($scope.currentGenre);
+        } else {
+            $scope.currentGenre = Genre.updateGenre($scope.currentGenre);
+        }
+        $scope.cancel();
+    };
+
+    $scope.edit = function (genre) {
+    	$scope.currentGenre = genre;
+    };
+
+    $scope.remove = function (index, id) {
+		$scope.genres.splice(index, 1);
+		Genre.remove({genreId:id});
     };
 }]);
