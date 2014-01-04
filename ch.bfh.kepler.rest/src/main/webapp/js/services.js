@@ -16,13 +16,13 @@ services.factory('Movie', ['$resource', function ($resource) {
 }]);
 
 services.factory('Regisseur', ['$resource', function ($resource) {
-    return $resource('rest/regisseurs/:id', {id:'@id'}, {
+    return $resource('rest/regisseurs/:regisseurId', {id:'@id'}, {
         'update': {method: 'PUT'}
     });
 }]);
 
 services.factory('Genre', ['$resource', function ($resource) {
-    return $resource('rest/genres/:id', {id:'@id'}, {
+    return $resource('rest/genres/:genresId', {id:'@id'}, {
         'update': {method: 'PUT'}
     });
 }]);

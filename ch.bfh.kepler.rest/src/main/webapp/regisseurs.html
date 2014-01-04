@@ -57,9 +57,9 @@
         </ul>
       </div>
     </div>
+    </div>
   </div>
-</header>
-
+<br /><br />
 	<div class="container">
 	
 		<h2>Current Regisseurs</h2>
@@ -70,23 +70,23 @@
 		    	<div class="form-group">
          
 			        <label for="firstname">Firstname</label>
-			        <input class="form-control" id="lastname" ng-model="currentRegisseur.firstname" />
+			        <input type="text" class="form-control" id="lastname" ng-model="currentRegisseur.firstname" />
 			        <img alt="portrait" >
 			        <br/>
 			        <label for="lastname">Lastname</label>
-			        <input id="lastname" ng-model="currentRegisseur.lastname" />
+			        <input type="text" id="lastname" ng-model="currentRegisseur.lastname" />
 			        <br/>
 			        <label for="dateOfBirth">Date of Birth</label>
-			        <input id="dateOfBirth" ng-model="currentRegisseur.dateOfBirth" />
+			        <input type="text" id="dateOfBirth" ng-model="currentRegisseur.dateOfBirth" />
 			        <br/>
 			        <label for="nationality">Nationality</label>
-			        <input id="nationality" ng-model="currentRegisseur.nationality" />
+			        <input type="text" id="nationality" ng-model="currentRegisseur.nationality" />
 			        <br/>
 			        <label for="portraitPath">Picturepath</label>
-			        <input id="portraitPath" ng-model="currentRegisseur.portraitPath" />
+			        <input type="text" id="portraitPath" ng-model="currentRegisseur.portraitPath" />
 			        <br/>
 			        <label for="id">Id</label>
-			        <input id="id" disabled="disabled" ng-model="currentRegisseur.id" />
+			        <input type="text" id="id" disabled="disabled" ng-model="currentRegisseur.id" />
 			        <br/><br />
 			        <button class="btn" id="save" ng-click="save()">Save Regisseur</button>
 			        <button class="btn" id="cancel" ng-click="cancel()">Cancel</button>
