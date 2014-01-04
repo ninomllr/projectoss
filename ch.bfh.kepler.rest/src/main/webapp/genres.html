@@ -27,8 +27,8 @@
 
 <body ng-app="movieapp">
 
-	<div class="navbar navbar-inverse navbar-fixed-top">
-    <div class="navbar-inner">
+<div class="navbar navbar-inverse navbar-fixed-top">
+  <div class="navbar-inner">
     <div class="container">
       <div class="dropdown pull-left">
         <a class="brand dropdown-toggle" role="button" data-toggle="dropdown" href="#"> 
@@ -58,7 +58,7 @@
       </div>
     </div>
   </div>
-</header>
+</div>
 
 	<div class="container">
 	
@@ -66,9 +66,8 @@
 		
 		<div ng-controller="GenreController">
 		
-		    <form id="form" role="form">
-		    	<div class="form-group">
-         
+		    <form>
+		    	<fieldset>    
 			        <label for="genre">Genre</label>
 			        <input class="form-control" id="genre" ng-model="currentGenre.genre" />
 			        <br/>
@@ -77,8 +76,8 @@
 			        <br/><br />
 			        <button class="btn" id="save" ng-click="save()">Save Genre</button>
 			        <button class="btn" id="cancel" ng-click="cancel()">Cancel</button>
-		        </div>
-		        
+
+		        </fieldset>
 		    </form>
 		
 		    <h2>Genres</h2>

@@ -66,12 +66,10 @@
 		
 		<div ng-controller="RegisseurController">
 		
-		    <form id="form" role="form">
-		    	<div class="form-group">
-         
+		    <form>
+		    	<fieldset>   
 			        <label for="firstname">Firstname</label>
-			        <input type="text" class="form-control" id="lastname" ng-model="currentRegisseur.firstname" />
-			        <img alt="portrait" >
+			        <input type="text" id="lastname" ng-model="currentRegisseur.firstname" />
 			        <br/>
 			        <label for="lastname">Lastname</label>
 			        <input type="text" id="lastname" ng-model="currentRegisseur.lastname" />
@@ -82,16 +80,15 @@
 			        <label for="nationality">Nationality</label>
 			        <input type="text" id="nationality" ng-model="currentRegisseur.nationality" />
 			        <br/>
-			        <label for="portraitPath">Picturepath</label>
-			        <input type="text" id="portraitPath" ng-model="currentRegisseur.portraitPath" />
+			        <label for="portaitPath">URL for Portrait</label>
+			        <input type="text" class="form-control" id="portaitPath" ng-model="currentRegisseur.portaitPath" />
 			        <br/>
 			        <label for="id">Id</label>
 			        <input type="text" id="id" disabled="disabled" ng-model="currentRegisseur.id" />
 			        <br/><br />
 			        <button class="btn" id="save" ng-click="save()">Save Regisseur</button>
 			        <button class="btn" id="cancel" ng-click="cancel()">Cancel</button>
-		        </div>
-		        
+		        </fieldset>	
 		    </form>
 		
 		    <h2>Regisseurs</h2>

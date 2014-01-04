@@ -76,9 +76,9 @@ controllers.controller('RegisseurController', ['$scope', 'Regisseur', function($
         var isNew = $scope.currentRegisseur.id == null;
         if (isNew) {
             $scope.currentRegisseur = Regisseur.save($scope.currentRegisseur);
-            $scope.regisseurs.push($scope.currentRegisseur);
+            $scope.authors.push($scope.currentRegisseur);
         } else {
-            $scope.currentRegisseur = Regisseur.updateRegisseur($scope.currentRegisseur);
+            $scope.currentRegisseur = Regisseur.update($scope.currentRegisseur);
 
         }
         $scope.cancel();
@@ -108,9 +108,9 @@ controllers.controller('GenreController', ['$scope', 'Genre', function($scope, G
         var isNew = $scope.currentGenre.id == null;
         if (isNew) {
             $scope.currentGenre = Genre.save($scope.currentGenre);
-            $scope.genres.push($scope.currentGenre);
+            $scope.authors.push($scope.currentGenre);
         } else {
-            $scope.currentGenre = Genre.updateGenre($scope.currentGenre);
+            $scope.currentGenre = Genre.update($scope.currentGenre);
         }
         $scope.cancel();
     };

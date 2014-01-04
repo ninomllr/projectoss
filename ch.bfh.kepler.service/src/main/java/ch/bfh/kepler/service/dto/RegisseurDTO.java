@@ -24,7 +24,7 @@ public class RegisseurDTO implements Serializable {
 	private String PortaitPath;
 	private static final long serialVersionUID = 1L;
 
-	private List<RegisseurDTO> regisseur;
+	private List<RegisseurDTO> regisseurs;
 
 	public RegisseurDTO() {
 		super();
@@ -71,11 +71,11 @@ public class RegisseurDTO implements Serializable {
 	public void setPortaitPath(String PortaitPath) {
 		this.PortaitPath = PortaitPath;
 	}
-	public List<RegisseurDTO> getRegisseur() {
-		return regisseur;
+	public List<RegisseurDTO> getRegisseurs() {
+		return regisseurs;
 	}
-	public void setMovies(List<RegisseurDTO> regisseur) {
-		this.regisseur = regisseur;
-	}
+//	public void setMovies(List<RegisseurDTO> regisseur) {
+//		this.regisseurs = regisseur;
+//	}
    
 }
