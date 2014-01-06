@@ -17,16 +17,17 @@
 
 
 	<script type="text/javascript" src="js/ui-bootstrap-tpls.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap-datepicker.js"></script>
 
     <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/base/jquery-ui.css" />
     <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="css/datepicker.css" rel="stylesheet"/>
+    <link href="css/style.css" rel="stylesheet"/>
 </head>
 
 <body ng-app="movieapp">
 
-<div role="main">
-
-	<header class="navbar navbar-fixed-top">
+	<div class="navbar navbar-inverse navbar-fixed-top">
     <div class="navbar-inner">
     <div class="container">
       <div class="dropdown pull-left">
@@ -57,8 +58,8 @@
       </div>
     </div>
   </div>
-</header>
-
+</div>
+<br /><br />
 	<div class="container">
 	
 		<h2>Current Movie</h2>
@@ -82,18 +83,42 @@
 			        <label for="coverPath">Cover Path</label>
 			        <input id="coverPath" ng-model="currentMovie.coverPath" />
 			        <br/>
-			        <label for="actors">Actors</label>
+			        <!--  <label for="actors">Actors</label>
 			        <input id="actors" ng-model="currentMovie.actors" />
-			        <br/>
+			        <br/>-->
 			        <label for="regisseur">Regisseur</label>
-			        <input id="regisseur" ng-model="currentMovie.regisseur" />
+			        <select ng-controller="RegisseurController" ng-model="currentMovie.regisseur" ng-options="r.firstname + ' ' + r.lastname for r in regisseurs"></select>
 			        <br/>
 			        <label for="genre">Genre</label>
-			        <input id="genre" ng-model="currentMovie.genre" />
+			        
+			        <!--<select ng-controller="GenreController" name="genre" ng-model="currentMovie.genre">
+			        	<option ng-repeat=“genre in genres” value=“{{genre.id}}” >
+        					{{genre.genre}}
+    					</option>
+			        </select>
+			        
+			        <select ng-controller="GenreController" ng-options="genre.id as genre.genre for genre in genres"></select>
+			        
+			        <select ng-model="currentMovie.genre" ng-options="g.genre for g in genres"></select>-->
+			        
+			        <select ng-controller="GenreController" ng-model="currentMovie.genre" ng-options="g.genre for g in genres"></select>
+			        
+			        <!--<select ng-controller="GenreController">
+			        	<option ng-repeat=“genre in genres” value="{{genre.id}}" label="{{genre.genre}}">
+			        	 </option>
+			        </select>
+			        
+					<select ng-controller="GenreController" ng-options="genre in genres"></select>
+					
+			        <select name="genre" ng-model="currentMovie.genre">
+			        	<option ng-controller="GenreController" ng-repeat=“genre in genres” >
+        					{{genre.genre}}
+    					</option>
+			        </select>-->
 			        <br/>
 			        <label for="id">Id</label>
 			        <input id="id" disabled="disabled" ng-model="currentMovie.id" />
-			        <br/><br />
+			        <br/><br/>
 			        <button class="btn" id="save" ng-click="save()">Save Movie</button>
 			        <button class="btn" id="cancel" ng-click="cancel()">Cancel</button>
 		        </div>
@@ -126,8 +151,8 @@
 		                <td>{{movie.description}}</td>
 		                <td>{{movie.coverPath}}</td>
 		                <td>{{movie.actors}}</td>
-		                <td>{{movie.regisseur}}</td>
-		                <td>{{movie.genre}}</td>
+		                <td>{{movie.regisseur.firstname}} {{movie.regisseur.lastname}}</td>
+		                <td>{{movie.genre.genre}}</td>
 		                <td>{{movie.id}}</td>
 		                <td>
 		                	<button class="btn" id="edit" ng-click="edit(movie)">Edit</button>
@@ -142,6 +167,5 @@
 
 	</div>
   
-</div>
 </body>
 </html>
