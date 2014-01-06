@@ -109,14 +109,14 @@
 		            </thead>
 		            <tbody>
 		            <tr ng-repeat="regisseur in regisseurs">	
+		            	<td>
+							<img class="overview" src="{{regisseur.portaitPath}}" />
+		            	</td>
 		            	<td>{{regisseur.id}}</td>                
 		                <td>{{regisseur.firstname}}</td>
 		                <td>{{regisseur.lastname}}</td>
 		                <td>{{regisseur.dateOfBirth}}</td>
 		                <td>{{regisseur.nationality}}</td>
-		                <td>
-							<img class="overview" src="{{regisseur.portaitPath}}" />
-		            	</td>
 		                <td>
 		                	<button class="btn" id="edit" ng-click="edit(regisseur)">Edit</button>
 		                	<button class="btn" id="delete" ng-click="remove($index, regisseur.id)">Delete</button>
