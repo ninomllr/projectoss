@@ -22,7 +22,7 @@ services.factory('Regisseur', ['$resource', function ($resource) {
 }]);
 
 services.factory('Genre', ['$resource', function ($resource) {
-    return $resource('rest/genres/:genresId', {genresId:'@id'}, {
+    return $resource('rest/genres/:genreId', {genreId:'@id'}, {
         'update': {method: 'PUT'}
     });
 }]);

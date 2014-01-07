@@ -98,12 +98,12 @@
 		        <table id="table" class="table">
 		            <thead>
 		            <tr>
+		            	<th>Portrait</th>
 		            	<th>Id</th>
 		                <th>Firstname</th>
 		                <th>Lastname</th>
 		                <th>Date of Birth</th>
 		                <th>Nationality</th>
-		                <th>Picture</th>
 		                <th>Commands</th>
 		            </tr>
 		            </thead>
@@ -117,6 +117,7 @@
 		                <td>{{regisseur.lastname}}</td>
 		                <td>{{regisseur.dateOfBirth}}</td>
 		                <td>{{regisseur.nationality}}</td>
+
 		                <td>
 		                	<button class="btn" id="edit" ng-click="edit(regisseur)">Edit</button>
 		                	<button class="btn" id="delete" ng-click="remove($index, regisseur.id)">Delete</button>
