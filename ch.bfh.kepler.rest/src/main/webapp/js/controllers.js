@@ -15,7 +15,7 @@ controllers.controller('ActorController', ['$scope', 'Actor', function($scope, A
         var isNew = $scope.currentActor.id == null;
         if (isNew) {
             $scope.currentActor = Actor.save($scope.currentActor);
-            $scope.authors.push($scope.currentActor);
+            $scope.actors.push($scope.currentActor);
         } else {
             $scope.currentActor = Actor.update($scope.currentActor);
         }
@@ -33,9 +33,11 @@ controllers.controller('ActorController', ['$scope', 'Actor', function($scope, A
 }]);
 
 
-controllers.controller('MovieController', ['$scope', 'Movie', function($scope, Movie) {
+controllers.controller('MovieController', ['$scope', 'Movie', 'Genre', 'Regisseur', function($scope, Movie, Genre, Regisseur) {
     $scope.currentMovie = new Movie();
     $scope.movies = Movie.query();
+    $scope.genres = Genre.query();
+    $scope.regisseurs = Regisseur.query();
     $scope.showId = false;
 
     $scope.cancel = function () {
@@ -46,7 +48,7 @@ controllers.controller('MovieController', ['$scope', 'Movie', function($scope, M
         var isNew = $scope.currentMovie.id == null;
         if (isNew) {
             $scope.currentMovie = Movie.save($scope.currentMovie);
-            $scope.authors.push($scope.currentMovie);
+            $scope.movies.push($scope.currentMovie);
         } else {
             $scope.currentMovie = Movie.update($scope.currentMovie);
         }
@@ -55,6 +57,9 @@ controllers.controller('MovieController', ['$scope', 'Movie', function($scope, M
     
             $scope.edit = function (movie) {
             	$scope.currentMovie = movie;
+            	$scope.currentMovie.genre = findById($scope.genres, movie.genre.id);
+            	$scope.currentMovie.regisseur = findById($scope.regisseurs, movie.regisseur.id);
+            	
             };
 
             $scope.remove = function (index, id) {
@@ -76,7 +81,7 @@ controllers.controller('RegisseurController', ['$scope', 'Regisseur', function($
         var isNew = $scope.currentRegisseur.id == null;
         if (isNew) {
             $scope.currentRegisseur = Regisseur.save($scope.currentRegisseur);
-            $scope.authors.push($scope.currentRegisseur);
+            $scope.regisseurs.push($scope.currentRegisseur);
         } else {
             $scope.currentRegisseur = Regisseur.update($scope.currentRegisseur);
 
@@ -108,7 +113,7 @@ controllers.controller('GenreController', ['$scope', 'Genre', function($scope, G
         var isNew = $scope.currentGenre.id == null;
         if (isNew) {
             $scope.currentGenre = Genre.save($scope.currentGenre);
-            $scope.authors.push($scope.currentGenre);
+            $scope.genres.push($scope.currentGenre);
         } else {
             $scope.currentGenre = Genre.update($scope.currentGenre);
         }
@@ -124,3 +129,9 @@ controllers.controller('GenreController', ['$scope', 'Genre', function($scope, G
 		Genre.remove({genreId:id});
     };
 }]);
+
+function findById(array, id) {
+    return array.filter(function (object) {
+        return object.id == id;
+    })[0];
+}

@@ -87,34 +87,19 @@
 			        <input id="actors" ng-model="currentMovie.actors" />
 			        <br/>-->
 			        <label for="regisseur">Regisseur</label>
-			        <select ng-controller="RegisseurController" ng-model="currentMovie.regisseur" ng-options="r.firstname + ' ' + r.lastname for r in regisseurs"></select>
+			        <select id="regisseur" required ng-model="currentMovie.regisseur" ng-options="regisseur as (regisseur.firstname + ' ' + regisseur.lastname) for regisseur in regisseurs">
+                		<option value="">-- choose regisseur --</option>
+            		</select>
+			        <!--  <select ng-controller="RegisseurController" ng-model="currentMovie.regisseur" ng-options="r.firstname + ' ' + r.lastname for r in regisseurs"></select>-->
 			        <br/>
 			        <label for="genre">Genre</label>
 			        
-			        <!--<select ng-controller="GenreController" name="genre" ng-model="currentMovie.genre">
-			        	<option ng-repeat=“genre in genres” value=“{{genre.id}}” >
-        					{{genre.genre}}
-    					</option>
-			        </select>
+			        <select id="genre" required ng-model="currentMovie.genre" ng-options="genre as genre.genre for genre in genres">
+                		<option value="">-- choose genre --</option>
+            		</select>
 			        
-			        <select ng-controller="GenreController" ng-options="genre.id as genre.genre for genre in genres"></select>
-			        
-			        <select ng-model="currentMovie.genre" ng-options="g.genre for g in genres"></select>-->
-			        
-			        <select ng-controller="GenreController" ng-model="currentMovie.genre" ng-options="g.genre for g in genres"></select>
-			        
-			        <!--<select ng-controller="GenreController">
-			        	<option ng-repeat=“genre in genres” value="{{genre.id}}" label="{{genre.genre}}">
-			        	 </option>
-			        </select>
-			        
-					<select ng-controller="GenreController" ng-options="genre in genres"></select>
-					
-			        <select name="genre" ng-model="currentMovie.genre">
-			        	<option ng-controller="GenreController" ng-repeat=“genre in genres” >
-        					{{genre.genre}}
-    					</option>
-			        </select>-->
+			        <!--  <select ng-controller="GenreController" ng-model="currentMovie.genre" ng-options="g.genre for g in genres"></select>-->
+			       
 			        <br/>
 			        <label for="id">Id</label>
 			        <input id="id" disabled="disabled" ng-model="currentMovie.id" />
