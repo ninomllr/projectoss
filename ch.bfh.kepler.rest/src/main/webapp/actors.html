@@ -14,6 +14,7 @@
     <script type="text/javascript" src="js/application.js"></script>
     <script type="text/javascript" src="js/controllers.js"></script>
     <script type="text/javascript" src="js/services.js"></script>
+   
 
 
 	<script type="text/javascript" src="js/ui-bootstrap-tpls.min.js"></script>
@@ -23,6 +24,8 @@
     <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap.min.css" rel="stylesheet"/>
     <link href="css/datepicker.css" rel="stylesheet"/>
     <link href="css/style.css" rel="stylesheet"/>
+    
+     <script type="text/javascript" src="js/directives.js"></script>
 </head>
 
 <body ng-app="movieapp">
@@ -79,10 +82,9 @@
 			        <br/>
 			        <label for="portaitPath">URL for Portrait</label>
 			        <input type="text" class="form-control" id="portaitPath" ng-model="currentActor.portaitPath" />
-			        <br/>
-			        
+			        <br />
 			        <label for="dateOfBirth">Date of Birth</label>
-			        <input type="text" id="dateOfBirth" ng-model="currentActor.dateOfBirth" />
+					<input type="text" ng-model="currentActor.dateOfBirth" id="dateOfBirth" date="dd.MM.yyyy" />
 			        <br/>
 			        <label for="id">Id</label>
 			        <input type="text" id="id" ng-model="currentActor.id" disabled="true" />
@@ -134,9 +136,10 @@
 	<script >
 	$( document ).ready(function() {
 		$('#dateOfBirth').datepicker({
-			format: 'mm-dd-yyyy'
-		});
+			format: 'dd.mm.yyyy'
+		})
 	});
+
 	
 	</script>
 </body>

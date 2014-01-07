@@ -72,16 +72,16 @@
 		    	<div class="form-group">
          
 			        <label for="firstname">Title</label>
-			        <input class="form-control" id="title" ng-model="currentMovie.title" />
+			        <input type="text" class="form-control" id="title" ng-model="currentMovie.title" />
 			        <br/>
 			        <label for="duration">Duration</label>
-			        <input id="duration" ng-model="currentMovie.duration" />
+			        <input type="text" id="duration" ng-model="currentMovie.duration" />
 			        <br/>
 			        <label for="description">Description</label>
-			        <input id="description" ng-model="currentMovie.description" />
+			        <input type="text" id="description" ng-model="currentMovie.description" />
 			        <br/>
 			        <label for="coverPath">Cover Path</label>
-			        <input id="coverPath" ng-model="currentMovie.coverPath" />
+			        <input type="text" id="coverPath" ng-model="currentMovie.coverPath" />
 			        <br/>
 			        <!--  <label for="actors">Actors</label>
 			        <input id="actors" ng-model="currentMovie.actors" />
@@ -102,7 +102,7 @@
 			       
 			        <br/>
 			        <label for="id">Id</label>
-			        <input id="id" disabled="disabled" ng-model="currentMovie.id" />
+			        <input type="text" id="id" disabled="disabled" ng-model="currentMovie.id" />
 			        <br/><br/>
 			        <button class="btn" id="save" ng-click="save()">Save Movie</button>
 			        <button class="btn" id="cancel" ng-click="cancel()">Cancel</button>
@@ -131,10 +131,12 @@
 		            </thead>
 		            <tbody>
 		            <tr ng-repeat="movie in movies">
+		            	<td>
+							<img class="overview" src="{{movie.coverPath}}" />
+		            	</td>
 		                <td>{{movie.title}}</td>
 		                <td>{{movie.duration}}</td>
 		                <td>{{movie.description}}</td>
-		                <td>{{movie.coverPath}}</td>
 		                <td>{{movie.actors}}</td>
 		                <td>{{movie.regisseur.firstname}} {{movie.regisseur.lastname}}</td>
 		                <td>{{movie.genre.genre}}</td>
