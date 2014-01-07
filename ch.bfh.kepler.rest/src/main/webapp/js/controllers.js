@@ -13,6 +13,7 @@ controllers.controller('ActorController', ['$scope', 'Actor', function($scope, A
 
     $scope.save = function () {
         var isNew = $scope.currentActor.id == null;
+        
         if (isNew) {
             $scope.currentActor = Actor.save($scope.currentActor);
             $scope.authors.push($scope.currentActor);
@@ -44,6 +45,7 @@ controllers.controller('MovieController', ['$scope', 'Movie', function($scope, M
 
     $scope.save = function () {
         var isNew = $scope.currentMovie.id == null;
+        
         if (isNew) {
             $scope.currentMovie = Movie.save($scope.currentMovie);
             $scope.authors.push($scope.currentMovie);
