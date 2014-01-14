@@ -5,5 +5,13 @@
 		<class>ch.bfh.kepler.model.Regisseur</class>
 		<class>ch.bfh.kepler.model.Actor</class>
 		<class>ch.bfh.kepler.model.Movie</class>
+		<properties>
+			<property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
+			<property name="javax.persistence.jdbc.url" value="jdbc:h2:~/kepplerDB"/>
+			<property name="javax.persistence.jdbc.user" value="bfh"/>
+			<property name="javax.persistence.jdbc.password" value="bfh"/>
+			<property name="eclipselink.ddl-generation" value="drop-and-create-tables"/>
+			<property name="eclipselink.ddl-generation.output-mode" value="database"/>
+		</properties>
 	</persistence-unit>
 </persistence>
